@@ -56,6 +56,9 @@
     [cookieProperties setObject:cookieValue forKey:NSHTTPCookieValue];
     [cookieProperties setObject:urlString forKey:NSHTTPCookieOriginURL];
     [cookieProperties setObject:@"/" forKey:NSHTTPCookiePath];
+  
+    NSDate* expiryDate = [[NSDate date] dateByAddingTimeInterval:2629743];
+    [cookieProperties setObject:expiryDate forKey:NSHTTPCookieExpires];
 
     NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieProperties];
     [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
