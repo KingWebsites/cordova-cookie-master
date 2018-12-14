@@ -54,7 +54,8 @@
     NSMutableDictionary *cookieProperties = [NSMutableDictionary dictionary];
     [cookieProperties setObject:cookieName forKey:NSHTTPCookieName];
     [cookieProperties setObject:cookieValue forKey:NSHTTPCookieValue];
-    [cookieProperties setObject:urlString forKey:NSHTTPCookieOriginURL];
+    // [cookieProperties setObject:urlString forKey:NSHTTPCookieOriginURL];
+    [cookieProperties setObject:@".talkfreely.com" forKey:NSHTTPCookieDomain];
     [cookieProperties setObject:@"/" forKey:NSHTTPCookiePath];
   
     NSDate* expiryDate = [[NSDate date] dateByAddingTimeInterval:2629743];
